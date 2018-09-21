@@ -2,6 +2,9 @@
 #include <iostream>
 #include <sstream>
 #include "utils.h"
+#include <cmath>
+#include <algorithm>
+#include "freqs.h"
 
 using namespace std;
 
@@ -86,4 +89,22 @@ float coincidence( const std::vector<float> & f )
   }
 
   return result;
+}
+
+float coincidenceMutuelle( const std::vector<float> & f1, const std::vector<float> & f2,unsigned int shift2){
+  float ic_mutu = 0;
+  for(unsigned i = 0; i <f1.size(); ++i){
+    ic_mutu += f1[i] * f2[i];
+  }
+  for(unsigned i=0; i<26; ++i){
+  }
+  return ic_mutu;
+}
+
+
+bool isFrench(const std::vector<float> & f){
+  float frenchIndice = coincidence(frequenciesFrench());
+  float randomIndice = coincidence(frequenciesRandom());
+  float mediane = (frenchIndice + randomIndice)/2;
+  return coincidence(f) > mediane;
 }

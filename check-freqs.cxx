@@ -20,11 +20,14 @@ int main( int argc, char** argv )
   }else{
     freqs = frequencies( s );
   }
-
+  cout << endl;
+  
   for(unsigned int i = 0; i < freqs.size(); i++){
     cout << (char) ('A' + i) << "=" << freqs[i] << " ";
   }
 
-  cout << endl;
+  cout << endl << endl;
   cout << "Ic=" << coincidence(freqs) << " Ifrench=" << coincidence(frequenciesFrench()) << " Irand=" << coincidence(frequenciesRandom()) << endl;
+  cout << "IsFrench=" << isFrench(freqs) << endl;
+
 }

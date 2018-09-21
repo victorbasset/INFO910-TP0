@@ -49,4 +49,6 @@ float coincidenceMutuelle2( const std::vector<float> & f1,
                             const std::vector<float> & f2,
                             unsigned int shift2 = 0 );
 
+bool isFrench(const std::vector<float> & f);
+
 #endif /* _UTILS_H_ */
